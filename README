@@ -1,0 +1,49 @@
+PhotoAlbum.pl
+Copyright 2002 Brian C. Lane
+
+
+This is a simple perl script to create a photoalbum of a directory of
+pictures suitable for posting to a webpage or burning onto a cdrom.
+
+It requires perl, Image Magick, File::copy, File::Basename, POSIX and
+Getopt::Std perl modules.
+
+Install the PhotoAlbum.pl script into /usr/local/bin
+The buttons used for the Album (contained in the buttons directory) should be
+placed into the directory pointedto by the $button_path variable.
+By default it is set to /usr/local/share/PhotoAlbum/buttons/
+
+You can change a few of the options at runtime using these switches:
+
+-c turns off captions
+-f turn off filename
+-s turn off file size
+-g turn off geometry
+-i "string" Title for Index Pages
+-p "string" Title for Individual Pages
+
+By default PhotoAlbum will prompt you for a caption for each picture,
+displaying the picture as you enter the text. It will include the filename,
+size of the image and image geometry unless the switch is passed on the
+command line.
+
+You can set the title of the indexes and the titles of the individual pages
+using the -i and -p arguments.
+
+To create an album, change to a directory full of images, with no
+sub-directories or extra files. It needs to be plain images, preferrably
+.jpg but it should work fine with other types.
+
+Run PhotoAlbum while in the cirectory and it will report as it creates the
+thumbnail images in the thumbnail directory. It will then start displaying
+the images (using Image Magick's display program) and prompt you to enter a
+caption for each of the images.
+
+When finished you can point your web browser at the index.html page to view
+the images.
+
+If you have any comments or suggestions please email me at bcl@brianlane.com
+
+
+Brian Lane
+06/30/2002
